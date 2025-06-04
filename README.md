@@ -19,7 +19,7 @@ Instalar las dependencias y luego ejecutar con npm start
 - `src/`: Contiene el código fuente del motor y los juegos.
   - `core/`: Clases base como `Game`, `Scene`, `InputManager`, etc.
   - `entities/`: Entidades de los juegos (Pong, Snake, Tetris, GifFighter).
-  - `scenes/`: Escenas de los juegos (PongScene, SnakeScene, PacmanScene, FightScene).
+  - `scenes/`: Escenas de los juegos (PongScene, SnakeScene, TetrisScene, FightScene).
 
 
 ## Juegos Incluidos
@@ -33,7 +33,7 @@ Instalar las dependencias y luego ejecutar con npm start
 
 - **Pong**: Usa las teclas `↑` y `↓` para mover la paleta izquierda.
 - **Snake**: Usa las flechas para mover la serpiente.
-- **Tetros**: Usa las flechas para mover a el bloque, usa `↑` para cambiar la posición de este.
+- **Tetris**: Usa las flechas para mover a el bloque, usa `↑` para cambiar la posición de este.
 - **Combate**:
   - **Capitán América**: `A` y `D` para moverse, `W` para saltar, `F` y `G` para atacar.
   - **Ironman**: Flechas `←` y `→` para moverse, `↑` para saltar, `L` y `K` para atacar.
