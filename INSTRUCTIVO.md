@@ -19,7 +19,7 @@ Instalar las dependencias y luego ejecutar con npm start
 - `src/`: Contiene el código fuente del motor y los juegos.
   - `core/`: Clases base como `Game`, `Scene`, `InputManager`, etc.
   - `entities/`: Entidades de los juegos (Pong, Snake, Tetris, GifFighter).
-  - `scenes/`: Escenas de los juegos (PongScene, SnakeScene, PacmanScene, FightScene).
+  - `scenes/`: Escenas de los juegos (PongScene, SnakeScene, TetrisScene, FightScene).
 
 
 ## Juegos Incluidos
