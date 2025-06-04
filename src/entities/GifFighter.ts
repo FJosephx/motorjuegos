@@ -31,6 +31,7 @@ export class GifFighter {
     private hasHit: boolean = false;
     private impactTimer: number = 0;
     private dyingTimer: number = 0;
+    private idleAnimationName: string;
 
     constructor(
         animations: AnimationData[],
@@ -59,9 +60,11 @@ export class GifFighter {
         if (inpeaceAnim) {
             this.currentAnimation = inpeaceAnim;
             this.baseHeight = inpeaceAnim.frame_height;
+            this.idleAnimationName = inpeaceAnim.name;
         } else {
             this.currentAnimation = animations[0];
             this.baseHeight = animations[0].frame_height;
+            this.idleAnimationName = animations[0].name;
         }
     }
 
@@ -101,7 +104,7 @@ export class GifFighter {
             } else if (this.name === 'Ironman') {
                 this.playAnimation('iron-inpeace', true); // Animación neutral durante el salto
             } else {
-                this.playAnimation('inpeace');
+                this.playAnimation(this.idleAnimationName);
             }
         }
     }
@@ -125,7 +128,7 @@ export class GifFighter {
                 this.y = this.groundY;
                 this.vy = 0;
                 this.isJumping = false;
-                this.playAnimation('inpeace');
+                this.playAnimation(this.idleAnimationName);
             }
         }
         // Reducir el temporizador de impacto
@@ -134,7 +137,7 @@ export class GifFighter {
         if (this.dyingTimer > 0) {
             this.dyingTimer -= 16;
             if (this.dyingTimer <= 0) {
-                this.playAnimation('inpeace');
+                this.playAnimation(this.idleAnimationName);
             }
         }
     }
@@ -174,7 +177,7 @@ export class GifFighter {
             this.currentFrame++;
             if (this.currentFrame >= this.currentAnimation.frame_count) {
                 if (this.attackQueue) {
-                    this.playAnimation('inpeace');
+                    this.playAnimation(this.idleAnimationName);
                     this.attackQueue = null;
                     this.hasHit = false; // Limpiar flag de golpe
                 }
